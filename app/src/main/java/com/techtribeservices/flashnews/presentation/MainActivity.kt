@@ -1,5 +1,6 @@
 package com.techtribeservices.flashnews.presentation
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -36,9 +37,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
 
-    // val api = BuildConfig
     Text(
-        text = "Hello $name! -",
+        text = "Hello $name! - ${BuildConfig.API_KEY}",
         modifier = modifier
     )
 }
