@@ -2,6 +2,7 @@ package com.techtribeservices.flashnews.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.techtribeservices.flashnews.data.mock.EveryThingData
 import com.techtribeservices.flashnews.data.response.NewsListResponse
 import com.techtribeservices.flashnews.domain.repository.NewsRepository
 import com.techtribeservices.flashnews.presentation.common.State
@@ -28,7 +29,8 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.tryEmit(State.Loading)
             try {
-                val result = newsRepository.getEverything()
+                //val result = newsRepository.getEverything()
+                val result = EveryThingData
                 _uiState.tryEmit(State.Success(result))
             } catch (e: Exception) {
                 _uiState.tryEmit(State.Error(e.message.toString()))
