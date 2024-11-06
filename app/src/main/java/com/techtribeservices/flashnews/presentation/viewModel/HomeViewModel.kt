@@ -7,6 +7,7 @@ import com.techtribeservices.flashnews.data.response.NewsListResponse
 import com.techtribeservices.flashnews.domain.repository.NewsRepository
 import com.techtribeservices.flashnews.presentation.common.State
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -30,6 +31,7 @@ class HomeViewModel @Inject constructor(
             _uiState.tryEmit(State.Loading)
             try {
                 //val result = newsRepository.getEverything()
+                delay(1000)
                 val result = EveryThingData
                 _uiState.tryEmit(State.Success(result))
             } catch (e: Exception) {

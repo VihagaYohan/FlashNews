@@ -25,16 +25,16 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    @Inject
-    lateinit var newsApi: NewsApi
+//    @Inject
+//    lateinit var newsApi: NewsApi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        GlobalScope.launch {
-            var response = newsApi.getEverything()
-            Log.d("Flash", response.body().toString())
-        }
+//        GlobalScope.launch {
+//            var response = newsApi.getEverything()
+//            Log.d("Flash", response.body().toString())
+//        }
 
         enableEdgeToEdge()
         setContent {

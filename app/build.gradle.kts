@@ -87,6 +87,12 @@ dependencies {
 
     // gson
     implementation(libs.gson)
+
+    // coil
+    implementation(libs.coil.compose)
+
+    // material 3 icons
+    implementation(libs.androidx.material.icons.extended)
 }
 
 // Allow references to generated code
