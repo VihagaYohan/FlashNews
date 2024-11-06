@@ -62,6 +62,7 @@ fun NewsItemCard(newsItem: ArticlesItem) {
                     text = newsItem.title,
                     style = MaterialTheme.typography.titleMedium,
                     color = Color.White,
+                    maxLines = 2,
                     modifier = Modifier
                         .background(Color.Black.copy(alpha = 0.5f))
                         .padding(10.dp)
@@ -89,8 +90,8 @@ fun NewsItemCard(newsItem: ArticlesItem) {
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun CardFooter(publishedDate: String,
-               author: String,
-               source: String) {
+               author: String = "No author",
+               source: String = "No source") {
     // Parse the ISO date string to ZonedDateTime
     val parsedDate = ZonedDateTime.parse(publishedDate)
 

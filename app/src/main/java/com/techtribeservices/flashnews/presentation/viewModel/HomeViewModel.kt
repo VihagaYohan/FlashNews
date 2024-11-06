@@ -30,9 +30,9 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.tryEmit(State.Loading)
             try {
-                //val result = newsRepository.getEverything()
+                val result = newsRepository.getEverything()
                 delay(1000)
-                val result = EveryThingData
+                //val result = EveryThingData
                 _uiState.tryEmit(State.Success(result))
             } catch (e: Exception) {
                 _uiState.tryEmit(State.Error(e.message.toString()))

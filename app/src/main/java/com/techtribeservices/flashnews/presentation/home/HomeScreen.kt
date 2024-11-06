@@ -1,5 +1,7 @@
 package com.techtribeservices.flashnews.presentation.home
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +12,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
@@ -20,11 +21,10 @@ import com.techtribeservices.flashnews.presentation.common.State
 import com.techtribeservices.flashnews.presentation.components.ErrorMessage
 import com.techtribeservices.flashnews.presentation.components.LoadingIndicator
 import com.techtribeservices.flashnews.presentation.viewModel.HomeViewModel
-import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.unit.dp
-import com.techtribeservices.flashnews.data.mock.EveryThingData
 import com.techtribeservices.flashnews.presentation.components.NewsItemCard
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun HomeScreen() {
     val viewModel: HomeViewModel = hiltViewModel()
@@ -48,6 +48,7 @@ fun HomeScreen() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun NewsList(newsList: State<NewsListResponse>) {
     val data = (newsList as State.Success).data
